@@ -1,32 +1,62 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import { Link, useParams } from "react-router-dom";
 import "../../styles/home.css";
+import { useState, useEffect } from "react";
 
-export const Contact = () => (
+export const Contact = () => {
+  const [contacts, setContacts] = useState([]);
+  const { theid }= useParams();
+  useEffect(() => {
+    fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Alefantozzi")
+      .then((response) => response.json())
+      .then((contacts) => {
+        setContacts(contacts);
+      });
+  });
+
+  const handleDelete = (theid) => {
+    const config = {
+      method: "DELETE",
+    };
+    alert("Usuario Eliminado")
+
+    fetch(`https://assets.breatheco.de/apis/fake/contact/${theid}`, config)
+    .then((res) => res.json()
+    );
+  };
+
+  return(
+    <>
   <div className="text-center mt-5 border border-black p-3">
-    <div className="card mb-3" style={{ width: 60 + "rem" }}>
+  {contacts.map((contact, index) => (
+    <div key={index} className="card mb-3" style={{ width: 60 + "rem" }}>
       <div className="row g-0">
         <div className="col-md-4" >
           <img className=""
-            src="https://img.freepik.com/foto-gratis/hombre-pulgar-arriba_1368-3701.jpg?size=626&ext=jpg&ga=GA1.1.52019007.1684833574&semt=ais"
+            src="https://static.vecteezy.com/system/resources/previews/002/318/271/non_2x/user-profile-icon-free-vector.jpg"
             style={{ width: 18 + "rem" }}
           />
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <button type="button" class="btn btn-primary">
+          <Link to={`/edit/${contact.id}`}>
+            <button type="button" className="btn btn-primary">
              Edit
             </button>
-            <button type="button" class="btn btn-secondary m-2">
-              Delete
+            </Link>
+            <button onClick={() => handleDelete(contact.id)} type="button" className="btn btn-secondary m-2">
+              Delete 
             </button>
-            <h5 className="card-title text-start">Nombre</h5>
-            <p className="text-start">direccion</p>
-            <p className="text-start">Movil</p>
-            <p className="text-start">email</p>
+            <h5 className="card-title text-start">{contact.full_name}</h5>
+            <p className="text-start">{contact.address}</p>
+            <p className="text-start">{contact.phone}</p>
+            <p className="text-start">{contact.email}</p>
           </div>
         </div>
       </div>
     </div>
+       ))}
   </div>
-);
+  </>
+  );
+};
