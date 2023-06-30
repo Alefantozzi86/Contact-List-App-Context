@@ -81,7 +81,7 @@ export const AddContacto = () => {
           />
         </div>
         <div className= "col-10">
-        <button type="submit" className="container float-md-start btn btn-primary m-4">
+        <button type="submit" className="container float-md-start btn btn-primary m-4" data-bs-dismiss="modal">
        Save
         </button>
         </div>
