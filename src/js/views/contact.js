@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../styles/home.css";
 import { useState, useEffect } from "react";
+import { Navbar } from "../component/navbar";
 
 export const Contact = () => {
   const [contacts, setContacts] = useState([]);
@@ -27,9 +28,10 @@ export const Contact = () => {
 
   return(
     <>
-  <div className="text-center mt-5 border border-black p-3">
+    <Navbar/>
+  <div className="text-center mt-5 border border-0 p-3">
   {contacts.map((contact, index) => (
-    <div key={index} className="card mb-3" style={{ width: 60 + "rem" }}>
+    <div key={index} className="card mb-3" id="contacto" style={{ width: 60 + "rem" }}>
       <div className="row g-0">
         <div className="col-md-4" >
           <img className=""

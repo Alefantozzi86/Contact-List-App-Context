@@ -33,8 +33,7 @@ export const AddContacto = () => {
       .catch((error) => console.error("error:", error))
   };
   return (
-    <div className="container">
-      <h1>Add Contact</h1>
+    <div className="container float-md-start">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name" className="form-label">Full Name</label>
@@ -80,13 +79,12 @@ export const AddContacto = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="container-fluid btn btn-primary m-4">
+        <div className= "col-10">
+        <button type="submit" className="container float-md-start btn btn-primary m-4">
        Save
         </button>
+        </div>
       </form>
-      <Link to="/">
-        <button className="btn btn-primary">Back to contact</button>
-      </Link>
     </div>
   );
 };
