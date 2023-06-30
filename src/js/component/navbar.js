@@ -4,12 +4,12 @@ import { AddContacto } from "../views/addcontacto";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar mb-3 m-3">
-      <div className="ml-auto">
+    <nav className="navbar navbar-expand-xl mb-3 m-3">
+      <div className="col-6 d-flex justify-content-end  mt-3">
         <button
           type="button"
-		  id="add"
-          className="btn btn-primary"
+		      id="add"
+          className="btn btn-primary  btn-lg"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
         >

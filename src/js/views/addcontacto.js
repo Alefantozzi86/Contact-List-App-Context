@@ -18,6 +18,7 @@ export const AddContacto = () => {
   }
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     const config = {
       method: "POST",
       body: JSON.stringify(data),

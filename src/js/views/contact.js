@@ -29,7 +29,8 @@ export const Contact = () => {
   return(
     <>
     <Navbar/>
-  <div className="text-center mt-5 border border-0 p-3">
+    <div className="container-expanded-xl-start">
+  <div className="text-center mt-5 border border-0 p-3" id="contactos">
   {contacts.map((contact, index) => (
     <div key={index} className="card mb-3" id="contacto" style={{ width: 60 + "rem" }}>
       <div className="row g-0">
@@ -39,25 +40,27 @@ export const Contact = () => {
             style={{ width: 18 + "rem" }}
           />
         </div>
-        <div className="col-md-8">
-          <div className="card-body">
+        <div className="col md-8">
+         
+          <div className="card-body d-flex justify-space-between">
           <Link to={`/edit/${contact.id}`}>
-            <button type="button" className="btn btn-primary">
+            <button type="button" className="btn btn-primary m-2" id="boton">
              Edit
             </button>
             </Link>
-            <button onClick={() => handleDelete(contact.id)} type="button" className="btn btn-secondary m-2">
+            <button onClick={() => handleDelete(contact.id)} type="button" className="btn btn-secondary m-2"id="boton">
               Delete 
             </button>
-            <h5 className="card-title text-start">{contact.full_name}</h5>
-            <p className="text-start">{contact.address}</p>
-            <p className="text-start">{contact.phone}</p>
-            <p className="text-start">{contact.email}</p>
+            </div>
+            <p className="card-title text-start fs-1">{contact.full_name}</p>
+            <p className="text-xl-start  fs-5">{contact.address}</p>
+            <p className="text-xl-start  fs-5">{contact.phone}</p>
+            <p className="text-xl-start fs-5">{contact.email}</p>
           </div>
         </div>
       </div>
-    </div>
        ))}
+  </div>
   </div>
   </>
   );

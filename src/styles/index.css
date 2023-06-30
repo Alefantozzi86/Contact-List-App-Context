@@ -2,10 +2,9 @@
     General Styles
 */
 body{
-    background-color: #210be4;
-background-image: linear-gradient(11deg, #210be4 0%, #0093E9 26%, #726c73 68%, #050316 100%);
 background-repeat: no-repeat;
 background-attachment: fixed;
+font-size:auto ;
 }
 
 #titulo{
@@ -30,12 +29,13 @@ button {
 
   cursor: pointer;
 }
-.card-body{
-    background-color: transparent;
+
+.d-flex, .navbar {
+    display: flex;
+    justify-content: end;
 }
-.row{
-    margin: 0vw;
-}
+
+
 
 .navbar{
 display: flex;
@@ -43,13 +43,30 @@ justify-content: center;
 }
 
 #contacto{
-    background-color:transparent;
+    background-color: #210be4;
+background-image: linear-gradient(11deg, #210be4 0%, #0093E9 26%, #726c73 68%, #050316 100%);
     border-radius: 15px;
     border-color: #190e77;
+    border-style:outset;
     margin-left: 100px;
 }
+.Content {
+    margin-top: 100px;
+}
+
+#bg {
+    border-radius: 50px;
+    background-color: #210be4;
+    background-image: linear-gradient(11deg, #210be4 0%, #0093E9 26%, #726c73 68%, #050316 100%);
+}  
 
 img{
     padding: 10px;
     margin:auto;
+    border-radius: 150px;
+    border: #050316;
+}
+.cont {
+    
+    width:90%;
 }
