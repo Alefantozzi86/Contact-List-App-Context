@@ -52,10 +52,10 @@ export const Contact = () => {
               Delete 
             </button>
             </div>
-            <p className="card-title text-start fs-1">{contact.full_name}</p>
-            <p className="text-xl-start  fs-5">{contact.address}</p>
-            <p className="text-xl-start  fs-5">{contact.phone}</p>
-            <p className="text-xl-start fs-5">{contact.email}</p>
+            <p className="card-title text-start fs-1 text-white">{contact.full_name}</p>
+            <p className="text-xl-start  fs-5  text-white">{contact.address}</p>
+            <p className="text-xl-start  fs-5  text-white">{contact.phone}</p>
+            <p className="text-xl-start fs-5  text-white">{contact.email}</p>
           </div>
         </div>
       </div>
